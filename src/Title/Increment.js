@@ -1,4 +1,12 @@
 import React from 'react';
+import './Increment.css';
+const colors = {
+  tomato: '#F06449',
+  platinum: '#EDE6E3',
+  gainsboro: '#DADAD9',
+  jet: '#36382E',
+  blue: '#5BC3EB'
+}
 
 class Increment extends React.Component {
 
@@ -9,9 +17,9 @@ class Increment extends React.Component {
 
     return (
       <div>
-        <button onClick={this.props.handleLeft} >{leftArrow}</button>
+        <button className="arrow" onClick={this.props.handleLeft} >{leftArrow}</button>
         <span>{this.props.value}</span>
-        <button onClick={this.props.handleRight}>{rightArrow}</button>
+        <button className="arrow" onClick={this.props.handleRight}>{rightArrow}</button>
       </div>
     )
   }
