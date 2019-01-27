@@ -7,7 +7,6 @@ body, html {
   width: 60%;
   margin-left: 20%;
   height: 100vh;
-
 }
 
 .team {
@@ -35,4 +34,17 @@ body, html {
 #team-title {
   position: absolute;
   bottom: 0px;
+}
+
+#start {
+  background-color: #008000;
+  position: absolute;
+  bottom: 30%;
+  height: 10vh;
+  width: 20%;
+  left: 40%;
+}
+
+#start:hover {
+  opacity: 0.90;
 }

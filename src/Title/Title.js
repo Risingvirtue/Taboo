@@ -7,7 +7,9 @@ class Title extends React.Component {
     this.state = {
       teams: [
         {id: 0, name: ""},
-        {id: 1, name: ""}
+        {id: 1, name: ""},
+        {id: 2, name: ""},
+        {id: 3, name: ""}
       ]
     }
 
@@ -44,6 +46,9 @@ class Title extends React.Component {
         <div>
         {this.state.teams.map(team => <input className="team-name" placeholder={'Team ' + (team.id + 1)} />)}
         </div>
+
+        <button id="start">Start!</button>
+
         <i id="settings" className="fa fa-cog" aria-hidden="true"></i>
       </div>
     )
