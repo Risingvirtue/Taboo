@@ -9,7 +9,6 @@ const colors = {
 }
 
 class Increment extends React.Component {
-  
 
   render() {
     const leftArrow = "<";
@@ -17,9 +16,9 @@ class Increment extends React.Component {
 
     return (
       <span id="container">
-        <button className="arrow" onClick={this.props.handleLeft}>{leftArrow}</button>
+        <button className='arrow' disabled={this.props.value == 2} onClick={this.props.handleLeft}>{leftArrow}</button>
         <span>{this.props.value}</span>
-        <button className="arrow" onClick={this.props.handleRight}>{rightArrow}</button>
+        <button className="arrow" disabled={this.props.value == 4} onClick={this.props.handleRight}>{rightArrow}</button>
       </span>
     )
   }

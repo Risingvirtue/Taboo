@@ -31,6 +31,7 @@ class Title extends React.Component {
   }
 
   render() {
+
     return (
       <div className="menu">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -43,7 +44,7 @@ class Title extends React.Component {
         <div>
         {this.state.teams.map(team => <input className="team-name" placeholder={'Team ' + (team.id + 1)} />)}
         </div>
-        <i id="settings" class="fa fa-cog" aria-hidden="true"></i>
+        <i id="settings" className="fa fa-cog" aria-hidden="true"></i>
       </div>
     )
   }
