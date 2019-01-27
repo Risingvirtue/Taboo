@@ -56,8 +56,6 @@ class Title extends React.Component {
     } else {
       alert('Please enter ' + this.state.teams.length + ' teams.');
     }
-
-
   }
 
   render() {
