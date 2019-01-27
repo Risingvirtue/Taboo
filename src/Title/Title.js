@@ -1,5 +1,6 @@
 import React from 'react';
 import Increment from './Increment.js';
+import TeamName from './TeamName.js';
 import './Title.css';
 class Title extends React.Component {
   constructor(props) {
@@ -7,14 +8,14 @@ class Title extends React.Component {
     this.state = {
       teams: [
         {id: 0, name: ""},
-        {id: 1, name: ""},
-        {id: 2, name: ""},
-        {id: 3, name: ""}
+        {id: 1, name: ""}
       ]
     }
 
     this.handleLeft = this.handleLeft.bind(this);
     this.handleRight = this.handleRight.bind(this);
+    this.handleTeamName = this.handleTeamName.bind(this);
+    this.submit = this.submit.bind(this);
   }
 
   handleLeft(e) {
@@ -32,6 +33,33 @@ class Title extends React.Component {
     })
   }
 
+  handleTeamName(index, name) {
+    const teams = this.state.teams;
+    teams[index].name = name;
+    this.setState({
+      teams: teams
+    })
+  }
+
+  submit() {
+    var isValid = true;
+    for (let i = 0; i < this.state.teams.length; i++) {
+      const name = this.state.teams[i].name;
+      if (name === '') {
+        isValid = false;
+        break;
+      }
+    }
+    if (isValid) {
+      const queryArr = this.state.teams.map(team => 'team' + team.id + '=' + team.name);
+      window.location.href='/score?' + queryArr.join('&');
+    } else {
+      alert('Please enter ' + this.state.teams.length + ' teams.');
+    }
+
+
+  }
+
   render() {
 
     return (
@@ -44,10 +72,13 @@ class Title extends React.Component {
             handleRight={this.handleRight} />
         </div>
         <div>
-        {this.state.teams.map(team => <input className="team-name" placeholder={'Team ' + (team.id + 1)} />)}
+        {this.state.teams.map(team =>
+            <TeamName onChange={this.handleTeamName}
+              className="team-name" id={team.id} />
+            )}
         </div>
 
-        <button id="start">Start!</button>
+        <button id="start" onClick={this.submit}>Start!</button>
 
         <i id="settings" className="fa fa-cog" aria-hidden="true"></i>
       </div>

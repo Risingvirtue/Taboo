@@ -9,14 +9,20 @@ const colors = {
 }
 
 class TeamName extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
+  changeTeam = (e) => {
+    this.props.onChange(this.props.id, e.target.value);
+  }
 
   render() {
     return (
-
+      <input className="team-name" onChange={this.changeTeam} placeholder={'Team ' + this.props.id} />
     )
   }
 }
 
 
-export default Increment;
+export default TeamName;
