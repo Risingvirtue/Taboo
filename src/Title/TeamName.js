@@ -19,7 +19,7 @@ class TeamName extends React.Component {
 
   render() {
     return (
-      <input className="team-name" onChange={this.changeTeam} placeholder={'Team ' + this.props.id} />
+      <input className="team-name" onChange={this.changeTeam} placeholder={'Team ' + (this.props.id + 1)} />
     )
   }
 }

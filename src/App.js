@@ -9,7 +9,6 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div className="container">
-
           <Route exact path="/" component={Title} />
           <Route exact path="/score" component={Score} />
         </div>

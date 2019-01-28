@@ -42,17 +42,11 @@ class Title extends React.Component {
   }
 
   submit() {
-    var isValid = true;
-    for (let i = 0; i < this.state.teams.length; i++) {
-      const name = this.state.teams[i].name;
-      if (name === '') {
-        isValid = false;
-        break;
-      }
-    }
+    var isValid = this.state.teams.every((team) => {return team.name !== ''})
+
     if (isValid) {
       const queryArr = this.state.teams.map(team => 'team' + team.id + '=' + team.name);
-      window.location.href='/score?' + queryArr.join('&');
+      window.location.href = '/score?' + queryArr.join('&');
     } else {
       alert('Please enter ' + this.state.teams.length + ' teams.');
     }
@@ -72,7 +66,7 @@ class Title extends React.Component {
         <div>
         {this.state.teams.map(team =>
             <TeamName onChange={this.handleTeamName}
-              className="team-name" id={team.id} />
+              className="team-name" id={team.id} key={team.id} />
             )}
         </div>
 
