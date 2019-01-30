@@ -2,6 +2,8 @@ import React from 'react';
 import Increment from './Increment.js';
 import TeamName from './TeamName.js';
 import './Title.css';
+import { combineReducers, createStore } from 'redux';
+
 class Title extends React.Component {
   constructor(props) {
     super(props);
