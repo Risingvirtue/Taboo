@@ -2,53 +2,44 @@ import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Title from './Title/Title';
 import Score from './Score/Score';
-
-import { combineReducers, createStore } from 'redux';
-
-
-function userReducer(state = [], action) {
-  if (action.type == 'changeState') {
-    return action.payload.newState;
-  }
-  return state;
-}
-
-function wordReducer(state = {}, action) {
-  return state;
-}
-
-const allReducers = combineReducers({
-  words: wordReducer,
-  users: userReducer
-})
-const store = createStore(allReducers, {
-  words: {'test': true, 'why': true},
-  users: ['Johnny']
-});
-console.log(store.getState());
-
-const action = {
-  type:'changeState',
-  payload: {
-    newState: 'New State'
-  }
-
-}
-
-store.dispatch(action);
-
+import { connect } from 'react-redux';
+import  { addUser } from './actions/user-actions'
 class App extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.onAddUser = this.onAddUser.bind(this);
+  }
+
+  onAddUser() {
+    this.props.onAddUser('Test1123');
+  }
   render() {
+    console.log(this.props)
+    this.onAddUser();
     return (
+
       <BrowserRouter>
         <div className="container">
           <Route exact path="/" component={Title} />
           <Route exact path="/score" component={Score} />
         </div>
       </BrowserRouter>
+
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    words: state.words,
+    users: state.users
+  }
+}
 
-export default App;
+const mapActionsToProps = {
+  onAddUser: addUser
+}
+
+
+export default connect(mapStateToProps,
+  mapActionsToProps)(App);
