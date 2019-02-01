@@ -1,0 +1,450 @@
+thrifty
+cheap
+spend
+money
+stingy
+
+ double
+twice
+number
+triple
+amount
+
+ tragedy
+terrible
+sad
+victim
+disaster
+
+ lawn
+grass
+mow
+green
+yard
+
+ arrest
+jail
+criminal
+police
+handcuffs
+
+ educate
+child
+teach
+learn
+school
+
+ myth
+Greek
+legend
+history
+culture
+
+ measurement
+unit
+height
+distance
+length
+
+ prescription
+doctor
+paper
+medicine
+pharmacy
+
+ grave
+bury
+cemetery
+dig
+funeral
+
+ makeup
+women
+lipstick
+pretty
+put on
+
+ hunt
+deer
+gun
+woods
+food
+
+ surgeon
+doctor
+surgery
+operation
+hospital
+
+ suburb
+city
+outside
+quiet
+live
+
+ minimum
+maximum
+lowest
+wage
+amount
+
+sacred
+holy
+religious
+blessed
+cow
+
+ warrior
+soldier
+war
+attack
+battle
+
+ retired
+work
+relax
+old
+pension
+
+ survey
+ask
+questions
+opinion
+fill out
+
+ corruption
+politician
+bribe
+government
+scandal
+
+ hook
+fishing
+metal
+sharp
+bait
+
+ ankle
+sprain
+leg
+foot
+break
+
+ steep
+climb
+mountain
+hill
+angle
+
+ spread
+disease
+virus
+infection
+prevent
+
+ cooperate
+together
+everyone
+unite
+work
+
+ sacrifice
+human
+kill
+ritual
+blood
+
+ bubble
+gum
+soap
+blow
+pop
+
+ jaw
+mouth
+teeth
+bones
+chew
+
+ sail
+ship
+boat
+ocean
+wind
+
+ tropical
+hot
+storm
+island
+exotic
+
+ mushroom
+white
+eat
+fungus
+sauce
+
+ workout
+gym
+weight
+train
+exercise
+
+ chew
+gum
+food
+eat
+teeth
+
+ fragile
+delicate
+break
+glass
+careful
+
+ mansion
+house
+home
+live
+expensive
+
+ crowd
+people
+many
+herd
+street
+
+ spit
+mouth
+saliva
+liquid
+tobacco
+
+ hike
+walk
+woods
+mountain
+backpack
+
+ dinosaur
+giant
+extinct
+lizard
+Barney
+
+ polite
+nice
+smile
+manners
+friendly
+
+ fried
+chicken
+cook
+food
+oil
+
+ jail
+prison
+criminals
+bars
+arrest
+
+ cigar
+Cuban
+smoke
+tobacco
+cigarette
+
+ sip
+drink
+taste
+mouth
+try
+
+ torture
+prisoner
+information
+pain
+guard
+
+ nun
+Catholic
+woman
+priest
+sister
+
+ owl
+night
+bird
+hoot
+tree
+
+ lottery
+win
+money
+ticket
+gambling
+
+ click
+mouse
+select
+tap
+noise
+
+ hammer
+
+nail
+swing
+build
+tool
+
+ coconut
+fruit
+oil
+white
+milk
+
+ syrup
+pancakes
+sweet
+maple
+butter
+
+ tornado
+storm
+wind
+damage
+hurricane
+
+ float
+boat
+water
+surface
+top
+
+ pearl
+oyster
+white
+jewelry
+diver
+
+ allergy
+sneeze
+itch
+spring
+season
+
+ pirate
+ship
+Caribbean
+Johnny Depp
+Captain Hook
+
+ shovel
+dig
+hole
+shed
+snow
+
+ cash
+money
+check
+payment
+dollar
+
+ diaper
+Pampers
+Huggies
+change
+baby
+
+ adult
+child
+grown up
+responsibilities
+mature
+
+ wink
+eye
+close
+look
+blink
+
+ imported
+exported
+foreign
+expensive
+product
+
+ hen
+rooster
+chicken
+farm
+eggs
+
+ mustache
+hair
+beard
+lip
+shave
+
+microwave
+heat
+food
+fast
+cook
+
+ grill
+barbecue
+cook
+fire
+meat
+
+ drummer
+Ringo
+beat
+sticks
+band
+
+ toast
+bread
+butter
+breakfast
+jelly
+
+ chart
+graph
+numbers
+visual
+data
+
+ pajamas
+bed
+night
+sleepover
+clothes
+
+ barber
+haircut
+shave
+scissors
+hairdresser
+
+ barefoot
+shoes
+socks
+summer
+beach
+
+ donkey
+gray
+cart
+stubborn
+ride
+
+ blizzard
+snow
+cold
+weather
+storm
