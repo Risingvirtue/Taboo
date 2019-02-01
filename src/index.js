@@ -16,8 +16,8 @@ const allReducers = combineReducers({
 })
 const store = createStore(allReducers,
   {
-  words: {'test': true, 'why': true},
-  users: ['Johnny']
+  users: [],
+  words: []
 }, window.devToolsExtension && window.devToolsExtension()
 );
 
