@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Title from './Title/Title';
 import Score from './Score/Score';
+
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import  { addUser } from './actions/user-actions'
 class App extends React.Component {
@@ -36,8 +38,16 @@ const mapStateToProps = state => {
   }
 }
 
-const mapActionsToProps = {
-  onAddUser: addUser
+const mapActionsToProps = (dispatch, props) => {
+  return bindActionCreators({
+    onAddUser: addUser
+  }, dispatch);
+
+
+}
+
+const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
+  console.log()
 }
 
 

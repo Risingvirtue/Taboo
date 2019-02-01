@@ -48,6 +48,7 @@ class Title extends React.Component {
 
     if (isValid) {
       const queryArr = this.state.teams.map(team => 'team' + team.id + '=' + team.name);
+      
       window.location.href = '/score?' + queryArr.join('&');
     } else {
       alert('Please enter ' + this.state.teams.length + ' teams.');
