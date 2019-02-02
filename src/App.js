@@ -5,12 +5,16 @@ import Score from './Score/Score';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import  { addUser } from './actions/user-actions'
+import  { addUser, apiRequest } from './actions/user-actions'
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.onAddUser = this.onAddUser.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.onApiRequest();
   }
 
   onAddUser() {
@@ -31,6 +35,7 @@ class App extends React.Component {
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
     words: state.words,
@@ -38,18 +43,11 @@ const mapStateToProps = state => {
   }
 }
 
-const mapActionsToProps = (dispatch, props) => {
-  return bindActionCreators({
-    onAddUser: addUser
-  }, dispatch);
-
+const mapActionsToProps = {
+    onAddUser: addUser,
+    onApiRequest: apiRequest
 
 }
-
-const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
-  console.log()
-}
-
 
 export default connect(mapStateToProps,
   mapActionsToProps)(App);

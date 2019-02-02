@@ -3,34 +3,32 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import * as serviceWorker from './serviceWorker';
-import { combineReducers, createStore } from 'redux';
+
+import thunk from 'redux-thunk';
+import { applyMiddleware, compose, combineReducers, createStore } from 'redux';
 
 import { Provider } from 'react-redux';
 import wordReducer from './Reducers/WordReducer';
 import userReducer from './Reducers/UserReducer';
 
 
-const allReducers = combineReducers({
-  words: wordReducer,
+
+const allReducers = {
+
   users: userReducer
-})
-const store = createStore(allReducers,
-  {
-  words: {'test': true, 'why': true},
-  users: ['Johnny']
-}, window.devToolsExtension && window.devToolsExtension()
-);
-
-
-const action = {
-  type:'updateUser',
-  payload: {
-    user: 'John'
-  }
-
 }
 
-store.dispatch(action);
+const allStoreEnhancers = compose (
+  applyMiddleware(thunk),
+  window.devToolsExtension && window.devToolsExtension()
+);
+
+const store = createStore(allReducers,
+  {
+  users: []
+}, allStoreEnhancers
+);
+
 
 ReactDOM.render(<Provider store={store} ><App /></Provider>, document.getElementById('root'));
 
