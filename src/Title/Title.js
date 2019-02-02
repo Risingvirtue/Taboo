@@ -2,7 +2,10 @@ import React from 'react';
 import Increment from './Increment.js';
 import TeamName from './TeamName.js';
 import './Title.css';
-import { combineReducers, createStore } from 'redux';
+
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import  { addUser } from '../actions/user-actions';
 
 class Title extends React.Component {
   constructor(props) {
@@ -17,6 +20,7 @@ class Title extends React.Component {
     this.handleLeft = this.handleLeft.bind(this);
     this.handleRight = this.handleRight.bind(this);
     this.handleTeamName = this.handleTeamName.bind(this);
+
     this.submit = this.submit.bind(this);
   }
 
@@ -43,13 +47,15 @@ class Title extends React.Component {
     })
   }
 
+
+
   submit() {
     var isValid = this.state.teams.every((team) => {return team.name !== ''})
 
     if (isValid) {
       const queryArr = this.state.teams.map(team => 'team' + team.id + '=' + team.name);
-      
-      window.location.href = '/score?' + queryArr.join('&');
+      this.props.onAddUser(this.state.teams.map(team => {return team.name}));
+      window.location.href = '/score';
     } else {
       alert('Please enter ' + this.state.teams.length + ' teams.');
     }
@@ -81,5 +87,15 @@ class Title extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return state;
+}
 
-export default Title;
+const mapActionsToProps = (dispatch, props) => {
+  return bindActionCreators({
+    onAddUser: addUser
+  }, dispatch);
+}
+
+export default connect(mapStateToProps,
+  mapActionsToProps)(Title);

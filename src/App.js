@@ -5,12 +5,18 @@ import Score from './Score/Score';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+<<<<<<< HEAD
 import  { addUser, apiRequest } from './actions/user-actions'
+=======
+import  { addUser } from './actions/user-actions';
+import { setCollection } from './actions/word-actions';
+>>>>>>> f05bfdbd0e83fb1ce0dd926ff7945d4f6bf4b735
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.onAddUser = this.onAddUser.bind(this);
+    this.onSetCollection = this.onSetCollection.bind(this);
   }
 
   componentDidMount() {
@@ -20,9 +26,15 @@ class App extends React.Component {
   onAddUser() {
     this.props.onAddUser('Test1123');
   }
+
+  onSetCollection(collection) {
+    this.props.onSetCollection(collection);
+  }
   render() {
-    console.log(this.props)
-    this.onAddUser();
+
+    //this.onAddUser();
+    //this.onSetCollection([{'test': ['no', 'yes', 'butwhy']}]);
+
     return (
 
       <BrowserRouter>
@@ -38,14 +50,23 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    words: state.words,
-    users: state.users
+    users: state.users,
+    words: state.words
   }
 }
 
+<<<<<<< HEAD
 const mapActionsToProps = {
     onAddUser: addUser,
     onApiRequest: apiRequest
+=======
+const mapActionsToProps = (dispatch, props) => {
+  return bindActionCreators({
+    onAddUser: addUser,
+    onSetCollection: setCollection
+  }, dispatch);
+
+>>>>>>> f05bfdbd0e83fb1ce0dd926ff7945d4f6bf4b735
 
 }
 

@@ -25,8 +25,14 @@ const allStoreEnhancers = compose (
 
 const store = createStore(allReducers,
   {
+<<<<<<< HEAD
   users: []
 }, allStoreEnhancers
+=======
+  users: [],
+  words: []
+}, window.devToolsExtension && window.devToolsExtension()
+>>>>>>> f05bfdbd0e83fb1ce0dd926ff7945d4f6bf4b735
 );
 
 
