@@ -5,7 +5,7 @@ import './Title.css';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import  { addUser } from '../actions/user-actions';
+import  { addUser, apiRequest } from '../actions/user-actions';
 
 class Title extends React.Component {
   constructor(props) {
@@ -17,43 +17,38 @@ class Title extends React.Component {
       ]
     }
 
-    this.handleLeft = this.handleLeft.bind(this);
-    this.handleRight = this.handleRight.bind(this);
+    this.handleIncrement = this.handleIncrement.bind(this);
     this.handleTeamName = this.handleTeamName.bind(this);
 
     this.submit = this.submit.bind(this);
   }
 
-  handleLeft(e) {
-    const teams = this.state.teams;
+  handleIncrement(increment) {
+    var newTeams = this.state.teams;
+    if(increment === -1) {
+      newTeams = this.state.teams.slice(0, this.state.teams.length - 1);
+    } else if (increment === 1) {
+      newTeams = [...this.state.teams, {id: this.state.teams.length, name: ""}]
+    }
     this.setState({
-      teams: teams.slice(0, teams.length - 1)
+      teams: newTeams
     })
   }
 
-  handleRight(e) {
-    const teams = this.state.teams;
-    teams.push({id: teams.length, name: ""});
-    this.setState({
-      teams: teams
-    })
-  }
 
   handleTeamName(index, name) {
-    const teams = this.state.teams;
+    const teams = [...this.state.teams];
     teams[index].name = name;
     this.setState({
       teams: teams
     })
   }
 
-
-
   submit() {
     console.log('props', this.props);
+
     this.props.onAddUser('test');
-    //this.props.onSetCollection([{'test': ['no', 'yes', 'butwhy']}]);
-    return;
+
     var isValid = this.state.teams.every((team) => {return team.name !== ''})
 
     if (isValid) {
@@ -72,8 +67,7 @@ class Title extends React.Component {
         <div className="team">
           <span id="team-title">Name of Teams</span>
           <Increment value={this.state.teams.length}
-            handleLeft={this.handleLeft}
-            handleRight={this.handleRight} />
+            handleIncrement={this.handleIncrement} />
         </div>
         <div>
         {this.state.teams.map(team =>
@@ -96,7 +90,8 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = (dispatch, props) => {
   return bindActionCreators({
-    onAddUser: addUser
+    onAddUser: addUser,
+    onApiRequest: apiRequest
   }, dispatch);
 }
 
