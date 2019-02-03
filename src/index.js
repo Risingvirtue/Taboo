@@ -13,26 +13,21 @@ import userReducer from './Reducers/UserReducer';
 
 
 
-const allReducers = {
-
+const allReducers = combineReducers({
+  words: wordReducer,
   users: userReducer
-}
+});
 
 const allStoreEnhancers = compose (
   applyMiddleware(thunk),
-  window.devToolsExtension && window.devToolsExtension()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 const store = createStore(allReducers,
   {
-<<<<<<< HEAD
-  users: []
-}, allStoreEnhancers
-=======
   users: [],
   words: []
-}, window.devToolsExtension && window.devToolsExtension()
->>>>>>> f05bfdbd0e83fb1ce0dd926ff7945d4f6bf4b735
+},allStoreEnhancers
 );
 
 

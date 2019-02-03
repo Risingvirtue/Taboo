@@ -1,6 +1,6 @@
 import React from 'react';
 import './Increment.css';
-const colors = {
+export const colors = {
   tomato: '#F06449',
   platinum: '#EDE6E3',
   gainsboro: '#DADAD9',

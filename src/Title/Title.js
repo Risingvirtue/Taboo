@@ -50,6 +50,10 @@ class Title extends React.Component {
 
 
   submit() {
+    console.log('props', this.props);
+    this.props.onAddUser('test');
+    //this.props.onSetCollection([{'test': ['no', 'yes', 'butwhy']}]);
+    return;
     var isValid = this.state.teams.every((team) => {return team.name !== ''})
 
     if (isValid) {
@@ -62,7 +66,6 @@ class Title extends React.Component {
   }
 
   render() {
-
     return (
       <div className="menu">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>

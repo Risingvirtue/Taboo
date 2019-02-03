@@ -1,6 +1,6 @@
 import React from 'react';
 import './TeamName.css';
-const colors = {
+export const colors = {
   tomato: '#F06449',
   platinum: '#EDE6E3',
   gainsboro: '#DADAD9',
@@ -9,9 +9,6 @@ const colors = {
 }
 
 class TeamName extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   changeTeam = (e) => {
     this.props.onChange(this.props.id, e.target.value);

@@ -5,12 +5,8 @@ import Score from './Score/Score';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-<<<<<<< HEAD
-import  { addUser, apiRequest } from './actions/user-actions'
-=======
 import  { addUser } from './actions/user-actions';
 import { setCollection } from './actions/word-actions';
->>>>>>> f05bfdbd0e83fb1ce0dd926ff7945d4f6bf4b735
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +16,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.props.onApiRequest();
+    //this.props.onApiRequest();
+    
   }
 
   onAddUser() {
@@ -31,9 +28,6 @@ class App extends React.Component {
     this.props.onSetCollection(collection);
   }
   render() {
-
-    //this.onAddUser();
-    //this.onSetCollection([{'test': ['no', 'yes', 'butwhy']}]);
 
     return (
 
@@ -55,19 +49,11 @@ const mapStateToProps = state => {
   }
 }
 
-<<<<<<< HEAD
-const mapActionsToProps = {
-    onAddUser: addUser,
-    onApiRequest: apiRequest
-=======
 const mapActionsToProps = (dispatch, props) => {
   return bindActionCreators({
     onAddUser: addUser,
     onSetCollection: setCollection
   }, dispatch);
-
->>>>>>> f05bfdbd0e83fb1ce0dd926ff7945d4f6bf4b735
-
 }
 
 export default connect(mapStateToProps,
