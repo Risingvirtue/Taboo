@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import  { addUser, apiRequest } from '../actions/user-actions';
 
+import { NavLink } from 'react-router-dom';
 class Title extends React.Component {
   constructor(props) {
     super(props);
@@ -75,9 +76,9 @@ class Title extends React.Component {
               className="team-name" id={team.id} key={team.id} />
             )}
         </div>
-
-        <button id="start" onClick={this.submit}>Start!</button>
-
+        <NavLink to="/score">
+          <button id="start" onClick={this.submit}>Start!</button>
+        </NavLink>
         <i id="settings" className="fa fa-cog" aria-hidden="true"></i>
       </div>
     )
