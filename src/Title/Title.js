@@ -15,13 +15,13 @@ class Title extends React.Component {
       teams: [
         {id: 0, name: ""},
         {id: 1, name: ""}
-      ]
+      ],
+      isValid: false
     }
 
     this.handleIncrement = this.handleIncrement.bind(this);
     this.handleTeamName = this.handleTeamName.bind(this);
 
-    this.submit = this.submit.bind(this);
   }
 
   handleIncrement(increment) {
@@ -40,31 +40,20 @@ class Title extends React.Component {
   handleTeamName(index, name) {
     const teams = [...this.state.teams];
     teams[index].name = name;
+    var isValid = teams.every((team) => {return team.name !== ''});
     this.setState({
-      teams: teams
+      teams: teams,
+      isValid: isValid
     })
   }
 
-  submit() {
-    console.log('props', this.props);
-
-    this.props.onAddUser('test');
-
-    var isValid = this.state.teams.every((team) => {return team.name !== ''})
-
-    if (isValid) {
-      const queryArr = this.state.teams.map(team => 'team' + team.id + '=' + team.name);
-      this.props.onAddUser(this.state.teams.map(team => {return team.name}));
-      window.location.href = '/score';
-    } else {
-      alert('Please enter ' + this.state.teams.length + ' teams.');
-    }
-  }
 
   render() {
+
+
     return (
       <div className="menu">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
         <div className="team">
           <span id="team-title">Name of Teams</span>
           <Increment value={this.state.teams.length}
@@ -76,8 +65,9 @@ class Title extends React.Component {
               className="team-name" id={team.id} key={team.id} />
             )}
         </div>
-        <NavLink to="/score">
-          <button id="start" onClick={this.submit}>Start!</button>
+        {!this.state.isValid && <div>Please enter name for each team</div>}
+        <NavLink id="nav-link" to="/score">
+          <button id="start" disabled={!this.state.isValid}>Start!</button>
         </NavLink>
         <i id="settings" className="fa fa-cog" aria-hidden="true"></i>
       </div>
