@@ -22,6 +22,7 @@ class Title extends React.Component {
     this.handleIncrement = this.handleIncrement.bind(this);
     this.handleTeamName = this.handleTeamName.bind(this);
 
+    this.setUsers = this.setUsers.bind(this);
   }
 
   handleIncrement(increment) {
@@ -47,6 +48,10 @@ class Title extends React.Component {
     })
   }
 
+  setUsers() {
+    this.props.onAddUser(this.state.teams.map(team => team.name));
+  }
+
 
   render() {
 
@@ -67,7 +72,7 @@ class Title extends React.Component {
         </div>
         {!this.state.isValid && <div>Please enter name for each team</div>}
         <NavLink id="nav-link" to="/score">
-          <button id="start" disabled={!this.state.isValid}>Start!</button>
+          <button id="start" onClick={this.setUsers} disabled={!this.state.isValid}>Start!</button>
         </NavLink>
         <i id="settings" className="fa fa-cog" aria-hidden="true"></i>
       </div>
