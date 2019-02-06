@@ -32,8 +32,10 @@ class Title extends React.Component {
     } else if (increment === 1) {
       newTeams = [...this.state.teams, {id: this.state.teams.length, name: ""}]
     }
+    var isValid = newTeams.every((team) => {return team.name !== ''});
     this.setState({
-      teams: newTeams
+      teams: newTeams,
+      isValid:isValid
     })
   }
 

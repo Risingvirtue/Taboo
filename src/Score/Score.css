@@ -42,29 +42,30 @@ body {
 }
 
 .modal {
-  background-color: red;
+
+  display: table;
+  height: 100vh;
+  width: 100vw;
+
 
 }
 
 .inner-modal {
-    position: absolute;
-    background-color: blue;
-    top: calc(50vh - 11vw);
+
+    height: 15vh;
     animation: 3s fadeAway;
-    
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #first {
   position: relative;
-  float: right;
-  right: 40vw;
   font-size: 5vw;
-
   display: inline-block;
   background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: 3s ease-out slideInFromLeft;
+
 }
 
 #vs {
@@ -81,10 +82,15 @@ body {
 #second {
   position: relative;
   float: left;
-  left: 40vw;
+  left: 60vw;
   font-size: 5vw;
   background: -webkit-linear-gradient(#eee, #333);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
- animation: 3s ease-out slideInFromRight;
+
+}
+
+.column {
+  width:50%;
+  display:inline-block;
 }
