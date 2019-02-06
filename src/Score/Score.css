@@ -1,0 +1,90 @@
+body {
+    font-family: 'Oswald', sans-serif;
+}
+@@keyframes fadeAway {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    right: 60vw;
+  }
+
+  100% {
+    right: 40vw;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    left: 60vw;
+  }
+
+  100% {
+    left: 40vw;
+  }
+
+}
+
+#line {
+  width: 100vw;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: calc(50vh - 1px);
+  z-index: 1000;
+}
+
+.modal {
+  background-color: red;
+
+}
+
+.inner-modal {
+    position: absolute;
+    background-color: blue;
+    top: calc(50vh - 11vw);
+    animation: 3s fadeAway;
+    
+}
+
+#first {
+  position: relative;
+  float: right;
+  right: 40vw;
+  font-size: 5vw;
+
+  display: inline-block;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: 3s ease-out slideInFromLeft;
+}
+
+#vs {
+  position: relative;
+  float: right;
+  font-size: 4vw;
+  text-align: center;
+  width: 100vw;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#second {
+  position: relative;
+  float: left;
+  left: 40vw;
+  font-size: 5vw;
+  background: -webkit-linear-gradient(#eee, #333);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ animation: 3s ease-out slideInFromRight;
+}
