@@ -14,8 +14,8 @@ class Score extends React.Component {
           </div>
         }
         <div id="line"></div>
-        <div class="modal">
-          <div class='inner-modal'>
+        <div className="modal">
+          <div className='inner-modal'>
             <div id='first'>Johnny</div>
             <div id='vs'>vs</div>
             <div id='second'>Pyroaddict</div>
