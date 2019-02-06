@@ -47,10 +47,7 @@ class Title extends React.Component {
     })
   }
 
-
   render() {
-
-
     return (
       <div className="menu">
 
@@ -66,7 +63,7 @@ class Title extends React.Component {
             )}
         </div>
         {!this.state.isValid && <div>Please enter name for each team</div>}
-        <NavLink id="nav-link" to="/score">
+        <NavLink to="/score">
           <button id="start" disabled={!this.state.isValid}>Start!</button>
         </NavLink>
         <i id="settings" className="fa fa-cog" aria-hidden="true"></i>
