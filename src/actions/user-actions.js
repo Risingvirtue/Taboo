@@ -1,9 +1,9 @@
 import axios from 'axios';
-export const UPDATE_USER = 'users:UpdateUser';
+export const SET_USERS = 'users:UpdateUser';
 export const SHOW_ERROR = 'users:showError';
 export function addUser(newUser) {
   return {
-    type: UPDATE_USER,
+    type: SET_USERS,
     payload: {
       users: newUser
     }

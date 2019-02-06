@@ -1,0 +1,60 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+#line {
+  width: 100vw;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: calc(50vh - 1px);
+}
+
+.modal {
+  background-color: red;
+  width: 100vw;
+  height: 100vh;
+}
+
+.inner-modal {
+    position: absolute;
+    top: calc(50vh - 11vw);
+}
+
+#first {
+  position: relative;
+  float: right;
+  right: 51vw;
+  font-size: 5vw;
+
+  display: inline-block;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
+
+}
+
+#vs {
+  position: relative;
+  float: right;
+  font-size: 4vw;
+  text-align: center;
+  width: 100vw;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#second {
+  position: relative;
+  float: left;
+  left: 51vw;
+  font-size: 5vw;
+  background: -webkit-linear-gradient(#eee, #333);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}

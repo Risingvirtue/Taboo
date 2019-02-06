@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './Score.css';
 
 class Score extends React.Component {
   render() {
@@ -7,6 +8,20 @@ class Score extends React.Component {
     console.log(this.props);
     return (
       <div>
+        {this.props.users.length == 2 &&
+          <div class="modal">
+
+          </div>
+        }
+        <div id="line"></div>
+        <div class="modal">
+          <div class='inner-modal'>
+            <div id='first'>Johnny</div>
+            <div id='vs'>vs</div>
+            <div id='second'>Pyroaddict</div>
+          </div>
+        </div>
+
         {this.props.users.map(user => <div>{user}</div>)}
       </div>
     )
