@@ -20,8 +20,11 @@ class Score extends React.Component {
               <div className="column left">
                 <div id='first'>Johnny</div>
               </div>
-
+            </div>
+            <div className = 'background'>
               <div id='vs'>vs</div>
+            </div>
+            <div className = 'background'>
               <div className="column right">
                 <div id='second'>Pyroaddict</div>
               </div>
