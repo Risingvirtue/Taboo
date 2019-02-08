@@ -26,7 +26,7 @@ class Score extends React.Component {
             </div>
             <div className = 'background'>
               <div className="column right">
-                <div id='second'>Pyroaddict</div>
+                <div id='second'>Pyroaddict123</div>
               </div>
             </div>
           </div>
