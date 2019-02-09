@@ -3,18 +3,32 @@ import { connect } from 'react-redux';
 import './Score.css';
 
 class Score extends React.Component {
+
+
+  componentDidMount() {
+      /*
+      setTimeout(() =>{
+        var modal = document.getElementById('modal');
+        modal.classList.add('display-none');
+        var scoreCard = document.getElementById('score')
+        scoreCard.classList.remove('display-none');
+      }, 3000)
+      */
+  }
+
+  getPlayer = (users) => {
+    var user = users.find(user => {return !user.hasGone});
+    return user.name;
+  }
+
+
   render() {
 
-    console.log(this.props);
+    var users = [{name: 'Johnny', score: 0, hasGone: false}, {name: 'Pyroaddict', score: 0, hasGone: false}];
     return (
       <div>
-        {this.props.users.length == 2 &&
-          <div class="modal">
-
-          </div>
-        }
         <div id="line"></div>
-        <div className="modal">
+        <div id = "modal" className="modal">
           <div className='inner-modal'>
             <div className= 'background'>
               <div className="column left">
@@ -26,13 +40,25 @@ class Score extends React.Component {
             </div>
             <div className = 'background'>
               <div className="column right">
-                <div id='second'>Pyroaddict123</div>
+                <div id='second'>Pyroaddict</div>
               </div>
             </div>
           </div>
         </div>
 
-        {this.props.users.map(user => <div>{user}</div>)}
+        <div id='score' className='scorecard'>
+          <div className='score-title'>Scores:</div>
+          {users.map(user =>
+            <div className='user'>
+              {user.name}
+              <span class='score'>{user.score}</span>
+            </div>)}
+        </div>
+
+        <div class='start'>
+          <div class='turn'>{this.getPlayer(users)}, it's your turn!</div>
+          <button id="start-btn">Start</button>
+        </div>
       </div>
     )
   }

@@ -51,7 +51,12 @@ class Title extends React.Component {
   }
 
   setUsers() {
-    this.props.onAddUser(this.state.teams.map(team => team.name));
+
+    this.props.onAddUser(this.state.teams.map(
+      function (team) {
+        return {name: team.name, score: 0}
+      }
+    ));
   }
 
 
