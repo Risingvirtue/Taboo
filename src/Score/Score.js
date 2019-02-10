@@ -1,19 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
+import ScoreCard from './ScoreCard';
+import Banner from './Banner';
+
 import './Score.css';
+
+import { NavLink } from 'react-router-dom';
 
 class Score extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showModal: false
+    }
+  }
 
   componentDidMount() {
-      /*
+
       setTimeout(() =>{
-        var modal = document.getElementById('modal');
-        modal.classList.add('display-none');
-        var scoreCard = document.getElementById('score')
-        scoreCard.classList.remove('display-none');
+      this.setState({
+        showModal: false
+      })
       }, 3000)
-      */
+
   }
 
   getPlayer = (users) => {
@@ -27,37 +39,17 @@ class Score extends React.Component {
     var users = [{name: 'Johnny', score: 0, hasGone: false}, {name: 'Pyroaddict', score: 0, hasGone: false}];
     return (
       <div>
-        <div id="line"></div>
-        <div id = "modal" className="modal">
-          <div className='inner-modal'>
-            <div className= 'background'>
-              <div className="column left">
-                <div id='first'>Johnny</div>
-              </div>
-            </div>
-            <div className = 'background'>
-              <div id='vs'>vs</div>
-            </div>
-            <div className = 'background'>
-              <div className="column right">
-                <div id='second'>Pyroaddict</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id='score' className='scorecard'>
-          <div className='score-title'>Scores:</div>
-          {users.map(user =>
-            <div className='user'>
-              {user.name}
-              <span class='score'>{user.score}</span>
-            </div>)}
-        </div>
+        {
+            this.state.showModal ?
+            <Banner /> :
+            <ScoreCard users={users} />
+          }
 
         <div class='start'>
           <div class='turn'>{this.getPlayer(users)}, it's your turn!</div>
-          <button id="start-btn">Start</button>
+          <NavLink to='./Play'>
+            <button id="start-btn">Start</button>
+          </NavLink>
         </div>
       </div>
     )

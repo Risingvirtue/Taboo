@@ -48,7 +48,7 @@ body {
 .modal {
 
   display: table;
-  display: none;
+
   height: 100vh;
   width: 100vw;
   animation: 3s  fadeAway;
@@ -125,7 +125,7 @@ body {
   border: 4px solid black;
   height: 70vh;
   left: 20vw;
-
+  margin-top: 5vh;
 }
 
 .score-title {

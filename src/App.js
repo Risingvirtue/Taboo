@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Title from './Title/Title';
 import Score from './Score/Score';
-
+import Play from './Play/Play';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import  { addUser } from './actions/user-actions';
@@ -35,6 +35,7 @@ class App extends React.Component {
         <div className="container">
           <Route exact path="/" component={Title} />
           <Route exact path="/score" component={Score} />
+          <Route exact path="/Play" component={Play} />
         </div>
       </BrowserRouter>
 
