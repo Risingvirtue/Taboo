@@ -1,6 +1,7 @@
 import axios from 'axios';
 export const SET_USERS = 'users:UpdateUser';
 export const SHOW_ERROR = 'users:showError';
+
 export function addUser(newUser) {
   return {
     type: SET_USERS,

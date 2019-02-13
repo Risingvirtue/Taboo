@@ -54,7 +54,7 @@ class Title extends React.Component {
 
     this.props.onAddUser(this.state.teams.map(
       function (team) {
-        return {name: team.name, score: 0}
+        return {name: team.name, score: 0, hasGone: false}
       }
     ));
   }
