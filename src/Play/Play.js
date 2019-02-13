@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { setWords } from '../actions/word-actions';
 class Play extends React.Component {
   constructor(props) {
     super(props);
@@ -7,11 +11,15 @@ class Play extends React.Component {
   }
 
   componentWillMount() {
-    setPlayerIndex();
-    getWordsList();
+    //this.setPlayerIndex();
+  }
+
+  componentDidMount() {
+    this.getWordsList();
   }
 
   setPlayerIndex = () => {
+    console.log('ength', this.state.users.length)
     for (var i = 0; i < this.state.users.length; i++) {
       var user = this.state.users[i];
       if (!user.hasGone) {
@@ -23,7 +31,7 @@ class Play extends React.Component {
   }
 
   getWordsList = () => {
-
+    this.props.setWords('easy');
   }
 
 
@@ -43,4 +51,4 @@ const mapActionsToProps = (dispatch, props) => {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapActionsToProps)(Score);
+export default connect(mapStateToProps, mapActionsToProps)(Play);
