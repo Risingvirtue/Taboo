@@ -5,10 +5,10 @@ class ScoreCard extends React.Component {
     return (
       <div id='score' className='scorecard'>
         <div className='score-title'>Scores:</div>
-        {this.props.users.map(user =>
-          <div className='user'>
+        {this.props.users.map((user, index) => 
+          <div key='index' className='user'>
             {user.name}
-            <span class='score'>{user.score}</span>
+            <span className='score'>{user.score}</span>
           </div>)}
       </div>
     )

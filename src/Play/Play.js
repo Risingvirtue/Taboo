@@ -32,10 +32,12 @@ class Play extends React.Component {
 
   getWordsList = () => {
     this.props.setWords('easy');
+
   }
 
 
   render() {
+    console.log('props', this.props)
     return <div>Test</div>
   }
 }
@@ -46,7 +48,6 @@ const mapStateToProps = (state) => {
 
 const mapActionsToProps = (dispatch, props) => {
   return bindActionCreators({
-
     setWords: setWords
   }, dispatch);
 }

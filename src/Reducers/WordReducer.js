@@ -2,10 +2,11 @@ import { SET_COLLECTION } from '../actions/word-actions';
 import axios from 'axios';
 
 export default function wordReducer(state = [], {type, payload}) {
-
+  console.log('payload', payload)
   switch(type) {
+
     case  SET_COLLECTION:
-      return payload.collection
+      return payload.collection;
     default:
       return state;
   }

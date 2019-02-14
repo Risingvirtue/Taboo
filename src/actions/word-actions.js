@@ -14,26 +14,14 @@ export function setCollection(collection) {
 }
 
 export function setWords(file) {
+    console.log('setWords', file)
     return dispatch => {
-
-      fs.readFile('../words/' + file + '.txt', 'utf8', function(error, data) {
-        console.log(error, data);
-        if (error) {
-          return {
-            type: SHOW_ERROR,
-            payload: {
-              error: error
-            }
-          }
-        } else {
-          return {
-            type: SET_COLLECTION,
-            payload: {
-              collection: JSON.parse(data.toString)
-            }
-          }
+      return {
+        type: SET_COLLECTION,
+        payload: {
+          collection: [{"save":["money","time","later","bank"]}]
         }
-      })
+      }
     };
 
 }
