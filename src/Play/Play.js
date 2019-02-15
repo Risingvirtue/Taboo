@@ -37,7 +37,7 @@ class Play extends React.Component {
 
 
   render() {
-    console.log('props', this.props)
+    
     return <div>Test</div>
   }
 }
