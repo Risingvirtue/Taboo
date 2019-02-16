@@ -14,14 +14,14 @@ export function setCollection(collection) {
 }
 
 export function setWords(file) {
-    console.log('setWords', file)
-    return dispatch => {
+    console.log('setWords', file);
+
       return {
         type: SET_COLLECTION,
         payload: {
           collection: [{"save":["money","time","later","bank"]}]
         }
       }
-    };
+    
 
 }
