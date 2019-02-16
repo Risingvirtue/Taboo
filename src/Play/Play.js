@@ -19,7 +19,7 @@ class Play extends React.Component {
   }
 
   setPlayerIndex = () => {
-    console.log('ength', this.state.users.length)
+    console.log('length', this.state.users.length)
     for (var i = 0; i < this.state.users.length; i++) {
       var user = this.state.users[i];
       if (!user.hasGone) {
@@ -37,7 +37,7 @@ class Play extends React.Component {
 
 
   render() {
-    
+
     return <div>Test</div>
   }
 }
