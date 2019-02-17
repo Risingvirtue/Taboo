@@ -7,7 +7,7 @@ import { setWords } from '../actions/word-actions';
 class Play extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    console.log('props', props);
   }
 
   componentWillMount() {
