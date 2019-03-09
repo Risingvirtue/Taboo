@@ -45,8 +45,8 @@ class Score extends React.Component {
             <ScoreCard users={users} />
           }
 
-        <div class='start'>
-          <div class='turn'>{this.getPlayer(users)}, it's your turn!</div>
+        <div className='start'>
+          <div className='turn'>{this.getPlayer(users)}, it's your turn!</div>
           <NavLink to='./Play'>
             <button id="start-btn">Start</button>
           </NavLink>
